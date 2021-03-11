@@ -316,7 +316,8 @@ df5
 </table>
 </div>
 
-
+<br>
+<br>
 
 
 ```python
@@ -329,13 +330,13 @@ plt.show()
 ![png](output_11_0.png)
     
 
-
+```python
 datas['FirstName'] = datas['Name'].apply(lambda v : "".join(v.split(',')[1].split()[1].split('(')).split(')')[0])
 groupby_firstname = datas.groupby('FirstName')
 df6 = pd.DataFrame({'count' : groupby_firstname.size()}).reset_index()
 df6 = df6.sort_values(by='count', ascending=False)[:20]
 df6
-
+```
 
 ```python
 df6.plot(kind='bar', x='FirstName', y = 'count')
